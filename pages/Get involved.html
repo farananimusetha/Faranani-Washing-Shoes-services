@@ -2,99 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get Involved | Faranani Shoe Cleaning</title>
-<link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description"
+        content="Join Faranani Shoe Cleaning's community initiatives — volunteer, sponsor, or collaborate to make a difference." />
+    <meta name="keywords" content="Faranani Shoe Cleaning, Get Involved, Volunteer, Donate, Community, Outreach" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
-
     <header>
         <div class="logo">
+            <img src="../assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
             <h1>Faranani Shoe Cleaning</h1>
-            <p>Keeping your shoes fresh & clean</p>
         </div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav>
+
+        <nav class="nav-bar">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./About us.html" >About Us</a></li>
+                <li><a href="./About us.html">About Us</a></li>
                 <li><a href="./Gallery.html">Gallery</a></li>
+                <li><a href="./services.html">Services</a></li>
                 <li><a href="./Our work.html">Our Work</a></li>
-                <li><a href="./Get involved.html">Get Involved</a></li>
-                <li><a href="./Contact us.html">Contact Us</a></li>
+                <li><a href="./enquery.html">Enquiry</a></li>
+                <li><a href="./Get involved.html" class="active">Get Involved</a></li>
+                <li><a href="./Contact us.html">Contact</a></li>
             </ul>
+            <div class="hamburger">&#9776;</div>
         </nav>
     </header>
 
     <main class="content">
         <section class="hero">
-            <h2>Get Involved</h2>
-            <p>Join our community initiatives, volunteer programs, or become part of our team. Your involvement helps us
-                empower youth and provide quality shoe care services.</p>
-        </section>
-
-        <section class="involvement-info">
-            <h3>Volunteer Opportunities</h3>
-            <ul>
-                <li>Assist in shoe cleaning and restoration at our facility</li>
-                <li>Help organize community outreach events</li>
-                <li>Support marketing and social media campaigns</li>
-                <li>Teach youth about entrepreneurship and shoe care</li>
-            </ul>
-
-            <h3>How You Can Help</h3>
-            <p>You can contribute by volunteering your time, donating supplies, or referring customers. Every effort
-                counts to grow our impact in the community.</p>
+            <h2>Get Involved with Faranani</h2>
+            <p>We’re more than a shoe cleaning business — we’re building opportunities in our community. Join us in
+                volunteering, sponsoring, or collaborating to empower others.</p>
         </section>
 
         <section class="get-involved-form">
-            <h3>Sign Up to Get Involved</h3>
-            <form action="contact.html" method="post">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+            <h3>Join Our Mission</h3>
+            <form id="involvedForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-
-                <label for="province">Province</label>
-                <select id="province" name="province" required>
-                    <option value="">Select your province</option>
-                    <option value="lmp">Limpopo</option>
-                    <option value="kzn">KwaZulu-Natal</option>
-                    <option value="gp">Gauteng</option>
-                    <option value="wc">Western Cape</option>
-                    <option value="ec">Eastern Cape</option>
+                <label for="interest">How would you like to get involved?</label>
+                <select id="interest" name="interest" required>
+                    <option value="">Select an option</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="sponsor">Sponsor a Project</option>
+                    <option value="collaborate">Collaborate / Partner</option>
                 </select>
 
-                <label for="interests">Other Interests / Skills</label>
-                <textarea id="interests" name="interests" rows="4"
-                    placeholder="Tell us how you can contribute"></textarea>
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write a short message..."></textarea>
 
-                <div class="form-buttons">
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Reset">
-                </div>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Faranani Musetha | All Rights Reserved</p>
-        <div class="social-footer">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/27663792391" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </footer>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="social-footer">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
+                    <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
+                    <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
+                </div>
+                <p>&copy; 2025 Faranani Musetha | All Rights Reserved</p>
 
+        </footer>
+
+
+        <script src="../js/script.js" defer></script>
 </body>
 
 </html>
