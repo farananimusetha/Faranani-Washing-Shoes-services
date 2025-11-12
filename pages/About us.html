@@ -2,213 +2,230 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Faranani Shoe Cleaning</title>
 
-    <!-- SEO Tags -->
+    <!-- SEO -->
     <meta name="description"
-        content="Learn more about Faranani Shoe Cleaning, our mission, values, and the dedicated team behind Johannesburg’s trusted shoe care brand.">
-    <meta name="keywords" content="About Faranani, Shoe Cleaning Team, Shoe Care Experts, Faranani Story">
-    <meta name="author" content="Faranani Shoe Cleaning">
+        content="Learn about Faranani Shoe Cleaning — our dedicated team restoring shoes and empowering the community through honest work and quality service." />
+    <meta name="keywords" content="About Faranani, Shoe Cleaning Team, Professional Shoe Care, Community Initiative" />
+    <meta name="author" content="Faranani Shoe Cleaning" />
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/a2b5c2b8c3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="../images/logo.png" alt="Faranani Logo" class="logo-img">
+            <img src="../assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
             <h1>Faranani Shoe Cleaning</h1>
         </div>
+
         <nav class="nav-bar">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="work.html">Our Work</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="./About us.html">About Us</a></li>
+                <li><a href="./Gallery.html">Gallery</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./Our work.html">Our Work</a></li>
+                <li><a href="./enquery.html">Enquiry</a></li>
+                <li><a href="./Get involved.html">Get Involved</a></li>
+                <li><a href="./Contact us.html">Contact</a></li>
             </ul>
+
+            <!-- Hamburger Menu Icon -->
             <div class="hamburger">&#9776;</div>
         </nav>
     </header>
 
-    <section class="about-hero">
-        <h2>Our Story</h2>
-        <p>Every great journey begins with a single step — ours started with a single pair of dirty sneakers.</p>
-    </section>
 
-    <section class="about-content">
+    <!-- About Section -->
+    <section class="about-section">
         <h2>Who We Are</h2>
         <p>
-            Faranani Shoe Cleaning was founded with one mission — to restore confidence one step at a time.
-            We are a Johannesburg-based shoe care company specializing in professional cleaning, repairs, and
-            restoration.
-            Our name “Faranani” means *“to support each other”*, and that’s exactly what we do — uplift our clients, our
-            community, and our environment.
+            Faranani Shoe Cleaning is a proudly South African initiative born from passion and purpose.
+            We specialize in professional shoe care services — from deep cleaning to full restoration —
+            and dedicate our craft to serving our community with excellence and empowerment.
         </p>
         <p>
-            We aim to empower young people by providing job training in sustainable shoe care and encourage recycling
-            through responsible practices.
-            With over 1,000 pairs cleaned and dozens of satisfied clients, our story continues to grow — step by step.
+            Our team is built on values of teamwork, innovation, and upliftment. Each member plays a
+            vital role in delivering quality work while creating job opportunities and inspiring youth
+            entrepreneurship in our communities.
         </p>
     </section>
 
-    <!-- Search Bar -->
-    <section class="search-team">
-        <h2>Meet Our Team</h2>
-        <p>Search for an employee by name or role:</p>
-        <input type="text" id="employeeSearch" placeholder="Search employee name or position...">
+    <!-- Search bar -->
+    <section class="search-section">
+        <input type="text" id="employeeSearch" placeholder="Search employee name or position..." />
+        <button id="searchBtn">Search</button>
     </section>
 
     <!-- Employee Cards -->
-    <section class="employee-cards">
-        <div class="card-grid">
+    <section class="employee-section">
+        <h2>Meet Our Team</h2>
+        <div class="card-container">
 
-            <!-- Employee 1 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team1.jpg" alt="John Mokoena">
-                        <h3>John Mokoena</h3>
+            <!-- Employee Card Example -->
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/Fari.jpeg" alt="Faranani" />
+                        <h3>Faranani</h3>
                         <p>Founder & CEO</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>John Mokoena</h3>
-                        <p>Founder & CEO</p>
-                        <p>Goal: To make every customer proud of their shoes and confident in their steps.</p>
+                    <div class="card-back">
+                        <h3>Faranani</h3>
+                        <p><strong>Position:</strong> Founder & CEO</p>
+                        <p><strong>Goal:</strong> To inspire young entrepreneurs and grow a sustainable community-based
+                            business.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Employee 2 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team2.jpg" alt="Thando Dlamini">
-                        <h3>Thando Dlamini</h3>
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/Ndivhuwo.jpeg" alt="Ndivhuwo" />
+                        <h3>Ndivhuwo</h3>
                         <p>Operations Manager</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>Thando Dlamini</h3>
-                        <p>Operations Manager</p>
-                        <p>Goal: To streamline our services and deliver the best customer experience possible.</p>
+                    <div class="card-back">
+                        <h3>Ndivhuwo</h3>
+                        <p><strong>Position:</strong> Operations Manager</p>
+                        <p><strong>Goal:</strong> To ensure every client receives spotless service and satisfaction.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Employee 3 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team3.jpg" alt="Lerato Mabuza">
-                        <h3>Lerato Mabuza</h3>
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/THbo.jpg " alt="Employee Thabo Nkosi" />
+                        <h3>Thabo Nkosi</h3>
+                        <p>Head Technician</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Thabo Nkosi</h3>
+                        <p><strong>Position:</strong> Head Technician</p>
+                        <p><strong>Goal:</strong> To perfect the art of shoe restoration with precision and passion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/Employee 1.jpg" alt="Employee Lerato Molefe" />
+                        <h3>Lerato Molefe</h3>
                         <p>Marketing Lead</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>Lerato Mabuza</h3>
-                        <p>Marketing Lead</p>
-                        <p>Goal: To tell our story in a way that inspires confidence and community.</p>
+                    <div class="card-back">
+                        <h3>Lerato Molefe</h3>
+                        <p><strong>Position:</strong> Marketing Lead</p>
+                        <p><strong>Goal:</strong> To share our story and connect with the community through every clean
+                            step.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Employee 4 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team4.jpg" alt="Kabelo Ndlovu">
-                        <h3>Kabelo Ndlovu</h3>
-                        <p>Head of Cleaning</p>
+            <!-- Add four more employees -->
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/zimas.jpg" alt="Employee Sipho Dlamini" />
+                        <h3>Sipho Dlamini</h3>
+                        <p>Customer Service</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>Kabelo Ndlovu</h3>
-                        <p>Head of Cleaning</p>
-                        <p>Goal: To ensure every shoe shines with perfection.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee 5 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team5.jpg" alt="Nomsa Khumalo">
-                        <h3>Nomsa Khumalo</h3>
-                        <p>Customer Relations</p>
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Nomsa Khumalo</h3>
-                        <p>Customer Relations</p>
-                        <p>Goal: To make sure every client leaves with a smile — and spotless shoes.</p>
+                    <div class="card-back">
+                        <h3>Sipho Dlamini</h3>
+                        <p><strong>Position:</strong> Customer Service</p>
+                        <p><strong>Goal:</strong> To make sure every client walks away smiling — shoes and heart alike.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Employee 6 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team6.jpg" alt="Sizwe Molefe">
-                        <h3>Sizwe Molefe</h3>
-                        <p>Delivery Supervisor</p>
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/musidzan.jpg" alt="Employee Nomvula Khumalo" />
+                        <h3>Nomvula Khumalo</h3>
+                        <p>Finance Officer</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>Sizwe Molefe</h3>
-                        <p>Delivery Supervisor</p>
-                        <p>Goal: To ensure timely, secure, and happy deliveries every time.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee 7 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team7.jpg" alt="Ayanda Zulu">
-                        <h3>Ayanda Zulu</h3>
-                        <p>Creative Designer</p>
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Ayanda Zulu</h3>
-                        <p>Creative Designer</p>
-                        <p>Goal: To design visuals that showcase our brand's heart and craftsmanship.</p>
+                    <div class="card-back">
+                        <h3>Nomvula Khumalo</h3>
+                        <p><strong>Position:</strong> Finance Officer</p>
+                        <p><strong>Goal:</strong> To ensure fair pricing and keep our services affordable to all.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Employee 8 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../images/team8.jpg" alt="Precious Mthethwa">
-                        <h3>Precious Mthethwa</h3>
-                        <p>Finance & Admin</p>
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/Orland.jpg" alt="Employee Kabelo Maseko" />
+                        <h3>Kabelo Maseko</h3>
+                        <p>Logistics Manager</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3>Precious Mthethwa</h3>
-                        <p>Finance & Admin</p>
-                        <p>Goal: To keep Faranani running smoothly, efficiently, and sustainably.</p>
+                    <div class="card-back">
+                        <h3>Kabelo Maseko</h3>
+                        <p><strong>Position:</strong> Logistics Manager</p>
+                        <p><strong>Goal:</strong> To ensure timely delivery and collection for every customer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="employee-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../assets/Real M.jpg" alt="Employee Palesa Nkuna" />
+                        <h3>Palesa Nkuna</h3>
+                        <p>Community Liaison</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Palesa Nkuna</h3>
+                        <p><strong>Position:</strong> Community Liaison</p>
+                        <p><strong>Goal:</strong> To strengthen our community impact through partnerships and outreach.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="social-footer">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/27663792391" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p>&copy; 2025 Faranani Shoe Cleaning | Empowering confidence with every clean.</p>
-    </footer>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="social-footer">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
+                    <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
+                    <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
+                </div>
+                <p>&copy; 2025 Faranani Shoe Cleaning | Restoring every step with pride.</p>
+        </footer>
 
-    <script src="../js/main.js"></script>
+        <script>
+            // Flip card only when clicked
+            function flipCard(card) {
+                card.classList.toggle("flipped");
+            }
+
+            // Employee search
+            document.getElementById("searchBtn").addEventListener("click", function () {
+                const input = document.getElementById("employeeSearch").value.toLowerCase();
+                const cards = document.querySelectorAll(".employee-card");
+
+                cards.forEach(card => {
+                    const name = card.querySelector("h3").innerText.toLowerCase();
+                    const position = card.querySelector("p").innerText.toLowerCase();
+                    card.style.display = (name.includes(input) || position.includes(input)) ? "block" : "none";
+                });
+            });
+        </script>
 </body>
 
 </html>
