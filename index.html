@@ -2,133 +2,200 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faranani Shoe Cleaning | Professional Shoe Care Services</title>
-
-    <!-- SEO Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Faranani Shoe Cleaning | Professional Shoe Care</title>
     <meta name="description"
-        content="Faranani Shoe Cleaning provides premium shoe cleaning, restoration, and repair services. Trusted by hundreds for professional care and eco-friendly cleaning." />
-    <meta name="keywords"
-        content="shoe cleaning, repair, restoration, Faranani, sneaker wash, eco-friendly cleaning, Johannesburg" />
+        content="Faranani Shoe Cleaning — trusted shoe cleaning, restoration, and repair in Limpopo. Eco-friendly, affordable, pickup & delivery available." />
+    <meta name="keywords" content="shoe cleaning, sneaker cleaning, restoration, sole repair, Faranani, Limpopo" />
     <meta name="author" content="Faranani Shoe Cleaning" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://kit.fontawesome.com/a2b5c2b8c3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="logo">
-            <img src="images/logo.png" alt="Faranani Logo" class="logo-img" />
+            <img src="./assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
             <h1>Faranani Shoe Cleaning</h1>
+            <p class="tag">Restore. Protect. Empower.</p>
         </div>
+
         <nav class="nav-bar">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="./pages/About us.html">About Us</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/About us.html ">About Us</a></li>
                 <li><a href="./pages/Gallery.html">Gallery</a></li>
+                <li><a href="./pages/services.html">Services</a></li>
                 <li><a href="./pages/Our work.html">Our Work</a></li>
+                <li><a href="./pages/enquery.html">Enquiry</a></li>
                 <li><a href="./pages/Get involved.html">Get Involved</a></li>
                 <li><a href="./pages/Contact us.html">Contact</a></li>
             </ul>
+
+            <!-- Hamburger Menu Icon -->
             <div class="hamburger">&#9776;</div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-text">
+        <div class="hero-inner">
             <h2>Step Into Clean Confidence</h2>
-            <p>At <strong>Faranani Shoe Cleaning</strong>, we bring your shoes back to life using eco-friendly products,
-                skilled craftsmanship, and love for style. Because every step matters.</p>
-            <a href="pages/gallery.html" class="cta-btn">View Our Work</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-home">
-        <h2>Who We Are</h2>
-        <p>
-            Founded in 2021, Faranani Shoe Cleaning started as a small passion project focused on providing affordable,
-            reliable, and environmentally conscious shoe care.
-            Today, we’ve become a trusted name in Johannesburg, serving hundreds of customers with pride and precision.
-        </p>
-        <p>
-            Our mission is simple: to make every shoe feel brand new while promoting sustainability and empowering local
-            youth through skill development in cleaning and restoration.
-        </p>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="services-overview">
-        <h2>Our Key Services</h2>
-        <div class="card-container">
-            <div class="card">
-                <img src="images/cleaning.jpg" alt="Shoe Cleaning" />
-                <h3>Professional Cleaning</h3>
-                <p>From sneakers to leather shoes, we remove stains, dirt, and odor using high-quality, safe cleaning
-                    products.</p>
-            </div>
-            <div class="card">
-                <img src="images/restoration.jpg" alt="Restoration" />
-                <h3>Shoe Restoration</h3>
-                <p>Bring old shoes back to life with our advanced restoration techniques that revive color, texture, and
-                    shape.</p>
-            </div>
-            <div class="card">
-                <img src="images/polish.jpg" alt="Polishing" />
-                <h3>Polishing & Shine</h3>
-                <p>Get that fresh-from-the-store shine with our detailed polishing service for all shoe materials.</p>
-            </div>
-            <div class="card">
-                <img src="images/pickup.jpg" alt="Pickup and Delivery" />
-                <h3>Pickup & Delivery</h3>
-                <p>Enjoy doorstep convenience — we collect, clean, and deliver your shoes right to your home or office.
-                </p>
+            <p>Professional shoe cleaning, restoration and repair — eco-friendly products, expert technicians,
+                convenient pickup & delivery.</p>
+            <div class="hero-cta">
+                <a class="btn" href="./pages/services.html">See Services</a>
+                <a class="btn ghost" href="./pages/enquery.html">Request Quote</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
-                <p>"Amazing service! My sneakers look brand new again. Highly recommend!"</p>
-                <h4>- Lebo M.</h4>
+    <!-- ABOUT QUICK -->
+    <section class="intro">
+        <div class="content">
+            <h3>About Faranani washing soe service</h3>
+            <p>Faranani is a community-first shoe care company. We train young people in practical skills while
+                offering
+                high-quality cleaning and restoration for all types of footwear. Sustainability and dignity
+                guide
+                everything we do.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW (cards) -->
+    <section class="section services-section">
+        <div class="section-inner">
+            <h3>Popular Services review</h3>
+
+            <div class="search-row">
+                <input id="serviceSearch" type="search" placeholder="Search services (e.g. Sneaker, Leather, Sole)" />
             </div>
-            <div class="testimonial">
-                <p>"Fast, professional, and affordable. The pickup service is a lifesaver!"</p>
-                <h4>- Thabo N.</h4>
+
+            <div id="servicesGrid" class="card-grid">
+                <!-- service-card: image, title, short desc, price, book -->
+                <article class="card service-card">
+                    <img src="./assets/Sneaker Whitening.jpeg" alt="Sneaker deep clean">
+                    <div class="card-content">
+                        <h4>Sneaker Deep Clean</h4>
+                        <p>Full deep clean, stain removal, odor neutralize.</p>
+                        <div class="meta">
+                            <span class="price">R120</span>
+                            <a class="btn small" href="./pages/Contact us.html">Book</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card service-card">
+                    <img src="./assets/Leather Conditioning.jpeg" alt="Leather conditioning">
+                    <div class="card-content">
+                        <h4>Leather Conditioning</h4>
+                        <p>Clean, condition and restore leather vibrancy.</p>
+                        <div class="meta">
+                            <span class="price">R150</span>
+                            <a class="btn small" href="./pages/Contact us.html">Book</a>
+                        </div>
+                    </div>
+                </article>
+
+
+
+                <article class="card service-card">
+                    <img src="./assets/Sole Replacement.jpeg" alt="Sole replacement">
+                    <div class="card-content">
+                        <h4>Sole Replacement</h4>
+                        <p>Durable sole repair & replacement service.</p>
+                        <div class="meta">
+                            <span class="price">R200</span>
+                            <a class="btn small" href="./pages/Contact us.html">Book</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div> <!-- .card-grid -->
+        </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section class="section gallery-section">
+        <div class="section-inner">
+            <h3>Gallery review</h3>
+
+            <div class="search-row">
+                <input id="gallerySearch" type="search" placeholder="Search gallery (Sneakers, Boots, Suede)" />
             </div>
-            <div class="testimonial">
-                <p>"They really care about the quality and sustainability of their work. Love it."</p>
-                <h4>- Naledi R.</h4>
+
+            <div id="galleryGrid" class="card-grid">
+                <figure class="card gallery-card">
+                    <img src="./assets/Community Food Drive.jpg" alt="Giving the Community food">
+                    <figcaption class="card-content">
+                        <h4>Giving the Community food</h4>
+                    </figcaption>
+                </figure>
+
+                <figure class="card gallery-card">
+                    <img src="./assets/Health Camp.jpg" alt="Health camp">
+                    <figcaption class="card-content">
+                        <h4>Health camp</h4>
+                    </figcaption>
+                </figure>
+
+                <figure class="card gallery-card">
+                    <img src="./assets/Elderly Care.jpg" alt="Elderly care">
+                    <figcaption class="card-content">
+                        <h4>taking care of old people</h4>
+                    </figcaption>
+                </figure>
+
+            </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="section-inner">
+            <h3>Happy Customers</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <p>"My sneakers look brand new!"</p>
+                        <p class="muted">— Lebo M.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p>"Exceptional service and friendly staff."</p>
+                        <p class="muted">— Thabo N.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p>"Pickup and delivery made everything easy."</p>
+                        <p class="muted">— Naledi R.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <h2>Join the Faranani Family</h2>
-        <p>We’re more than just a shoe cleaning service — we’re a movement for quality, confidence, and community
-            impact.</p>
-        <a href="pages/get-involved.html" class="cta-btn">Get Involved</a>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-footer">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/27663792391" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="social-footer">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
+                <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
+                <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
+            </div>
+            <p>&copy; 2025 Faranani Shoe Cleaning — All rights reserved</p>
         </div>
-        <p>&copy; 2025 Faranani Shoe Cleaning | Designed with passion and precision.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <div id="lightbox" class="lightbox" aria-hidden="true"></div>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
