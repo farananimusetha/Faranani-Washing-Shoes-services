@@ -1,262 +1,221 @@
-/* global script for site: hamburger, 3 searches, flip-cards, lightbox, forms, clock */
+/* js/script.js - Unified JS for site:
+   - hamburger menu
+   - searches (services, gallery, employees)
+   - gallery lightbox
+   - flip-on-click employee cards
+   - live form validation with inline error messages
+   - enquiry calculator
+   - contact live clock
+   - get-involved redirect
+*/
 
-/* ---------- DOM helpers ---------- */
-const $ = sel => document.querySelector(sel);
-const $$ = sel => Array.from(document.querySelectorAll(sel));
+/* DOM helpers */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
 
-/* ---------- HAMBURGER (only visible <768 via CSS) ---------- */
-(function navToggle() {
-    // checkbox + label handles toggle; nothing extra needed
-    // keep accessible keyboard toggle
-    const menuToggle = $('#menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('change', () => {
-            // nothing special required; CSS shows/hides
-        });
-    }
+/* HAMBURGER */
+(function hamburger() {
+    const toggle = $('#menu-toggle');
+    // no-op if not present, CSS handles showing/hiding
+    if (!toggle) return;
+    // close menu when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+        const nav = document.querySelector('nav');
+        const label = document.querySelector('label.menu-icon');
+        if (!nav || !label) return;
+        if (!nav.contains(e.target) && !label.contains(e.target) && window.getComputedStyle(label).display !== 'none') {
+            toggle.checked = false;
+        }
+    });
 })();
 
-/* ---------- CLICK-TO-FLIP EMPLOYEE CARDS ---------- */
-(function employeeFlip() {
-    const employees = $$('.employee-card');
-    employees.forEach(card => {
+/* SEARCH FILTER - generic */
+function liveFilter(inputSel, itemSel) {
+    const input = document.querySelector(inputSel);
+    if (!input) return;
+    input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        document.querySelectorAll(itemSel).forEach(it => {
+            const text = it.textContent.trim().toLowerCase();
+            it.style.display = text.includes(q) ? '' : 'none';
+        });
+    });
+}
+liveFilter('#serviceSearch', '.service-card');
+liveFilter('#gallerySearch', '.gallery-card');
+liveFilter('#employeeSearch', '.flip-card');
+
+/* FLIP CARDS - click to toggle */
+(function flips() {
+    $$('.flip-card').forEach(card => {
         card.addEventListener('click', (e) => {
-            // toggle class on the clicked card only
-            card.classList.toggle('flip-active');
+            // ignore clicks on links/buttons inside
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            card.classList.toggle('flipped');
         });
+        // keyboard support
+        card.tabIndex = 0;
+        card.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); card.classList.toggle('flipped'); } });
     });
 })();
 
-/* ---------- LIGHTBOX for gallery images ---------- */
-(function lightboxInit() {
-    const lightbox = $('#lightbox') || (function () { const d = document.createElement('div'); d.id = 'lightbox'; d.className = 'lightbox'; document.body.appendChild(d); return d; })();
-    function openLight(src, alt) {
-        lightbox.innerHTML = '';
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alt || '';
-        lightbox.appendChild(img);
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-    }
-    function closeLight() {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightbox.innerHTML = '';
-    }
-    // attach events to gallery-card images
-    $$('.gallery-card img').forEach(img => {
+/* LIGHTBOX */
+(function lightbox() {
+    const lb = document.getElementById('lightbox') || (() => {
+        const d = document.createElement('div'); d.id = 'lightbox'; document.body.appendChild(d); return d;
+    })();
+    // open images inside .gallery-card img
+    $$('.gallery-card img, .card img').forEach(img => {
         img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => openLight(img.src, img.alt));
-    });
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLight();
-    });
-})();
-
-/* ---------- SEARCH FILTERS (services, gallery, employees) ----------
-   Each search input should exist in HTML with these IDs:
-   - #serviceSearch (filters .service-card elements)
-   - #gallerySearch (filters .gallery-card elements)
-   - #employeeSearch (filters .employee-card elements)
-*/
-(function searches() {
-    function setup(inputId, selectorList) {
-        const input = document.getElementById(inputId);
-        if (!input) return;
-        input.addEventListener('input', () => {
-            const q = input.value.trim().toLowerCase();
-            const items = document.querySelectorAll(selectorList);
-            items.forEach(it => {
-                const text = it.textContent.trim().toLowerCase();
-                it.style.display = text.indexOf(q) > -1 ? '' : 'none';
-            });
-        });
-    }
-    setup('serviceSearch', '.service-card');
-    setup('gallerySearch', '.gallery-card');
-    setup('employeeSearch', '.employee-card');
-})();
-
-/* ---------- FORM VALIDATION + AJAX simulation ----------
-   Forms with attribute data-ajax="true" will show a simulated async response.
-   Example: <form id="myForm" data-ajax="true"> ... </form>
-*/
-(function forms() {
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    $$('form').forEach(form => {
-        form.addEventListener('submit', e => {
-            // required inputs: elements with required attribute
-            const requireds = Array.from(form.querySelectorAll('[required]'));
-            let ok = true;
-            requireds.forEach(inp => {
-                inp.classList.remove('err');
-                if (!inp.value.trim()) {
-                    inp.classList.add('err');
-                    ok = false;
-                } else if (inp.type === 'email' && !validateEmail(inp.value.trim())) {
-                    inp.classList.add('err');
-                    ok = false;
-                }
-            });
-
-            if (!ok) {
-                e.preventDefault();
-                const fb = form.querySelector('.form-feedback');
-                if (fb) fb.textContent = 'Please complete the required fields correctly.';
-                return;
-            }
-
-            // If form has data-ajax attribute, simulate submission and show feedback
-            if (form.dataset.ajax === "true") {
-                e.preventDefault();
-                const fb = form.querySelector('.form-feedback') || document.createElement('div');
-                fb.className = 'form-feedback';
-                fb.textContent = 'Sending...';
-                form.appendChild(fb);
-                // simulate server delay
-                setTimeout(() => {
-                    fb.textContent = 'Thank you — we received your enquiry. We will be in touch shortly.';
-                    form.reset();
-                }, 900);
-            }
-            // otherwise allow real submit
+        img.addEventListener('click', (e) => {
+            lb.innerHTML = '';
+            const big = document.createElement('img');
+            big.src = img.src;
+            big.alt = img.alt || '';
+            lb.appendChild(big);
+            lb.classList.add('active');
         });
     });
+    lb.addEventListener('click', () => lb.classList.remove('active'));
 })();
 
-/* ---------- LIVE CLOCK helper (for contact page) ----------
-   Place an element with id="liveClock" where you want the time displayed.
-*/
+/* FORM VALIDATION - live */
+function attachFormValidation(formSelector) {
+    const form = document.querySelector(formSelector);
+    if (!form) return;
+    const requiredFields = Array.from(form.querySelectorAll('[required]'));
+    // create inline error container per field
+    requiredFields.forEach(field => {
+        const err = document.createElement('div');
+        err.className = 'error';
+        err.style.display = 'none';
+        field.insertAdjacentElement('afterend', err);
+        // live input
+        field.addEventListener('input', () => validateField(field, err));
+        field.addEventListener('blur', () => validateField(field, err));
+    });
+
+    form.addEventListener('submit', (e) => {
+        let ok = true;
+        requiredFields.forEach(field => {
+            const err = field.nextElementSibling && field.nextElementSibling.classList && field.nextElementSibling.classList.contains('error') ? field.nextElementSibling : null;
+            if (!validateField(field, err)) ok = false;
+        });
+        if (!ok) {
+            e.preventDefault();
+            const firstInvalid = requiredFields.find(f => f.classList.contains('input-invalid'));
+            if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            // if form has data-redirect attribute, follow it, else allow natural submit
+            const redirect = form.dataset.redirect;
+            if (redirect) {
+                e.preventDefault();
+                // show a quick message then redirect
+                alert('Thank you! Redirecting you to the Contact page...');
+                window.location.href = redirect;
+            }
+        }
+    });
+
+    function validateField(field, err) {
+        const value = (field.value || '').trim();
+        let valid = true;
+        if (field.hasAttribute('required') && !value) valid = false;
+        if (valid && field.type === 'email') {
+            valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        }
+        if (!valid) {
+            field.classList.add('input-invalid');
+            if (err) { err.textContent = field.getAttribute('data-error') || 'This field is required'; err.style.display = 'block'; }
+            return false;
+        } else {
+            field.classList.remove('input-invalid');
+            if (err) { err.textContent = ''; err.style.display = 'none'; }
+            return true;
+        }
+    }
+}
+
+/* Attach validation to common forms */
+attachFormValidation('#contactForm');
+attachFormValidation('#enquiryForm');
+attachFormValidation('#involvedForm');
+
+/* ENQUIRY CALCULATOR (price * qty) */
+(function calc() {
+    const serviceSelect = $('#serviceType');
+    const qtyInput = $('#quantity');
+    const totalInput = $('#total');
+    if (serviceSelect && qtyInput && totalInput) {
+        function update() {
+            const price = parseFloat(serviceSelect.value) || 0;
+            const qty = parseInt(qtyInput.value, 10) || 0;
+            totalInput.value = (price * qty).toFixed(2);
+        }
+        serviceSelect.addEventListener('change', update);
+        qtyInput.addEventListener('input', update);
+        update();
+    }
+})();
+
+/* CONTACT live clock */
 (function liveClock() {
-    const el = document.getElementById('liveClock');
-    if (!el) return;
+    const clock = document.getElementById('currentTime') || document.getElementById('liveClock');
+    if (!clock) return;
     function tick() {
         const now = new Date();
-        // local string; you can format differently if needed
-        el.textContent = now.toLocaleString();
+        clock.textContent = now.toLocaleString();
     }
     tick();
     setInterval(tick, 1000);
 })();
 
-/* ---------- small accessibility & keyboard support ----------
-   Allow Enter on focused employee card to flip
-*/
-(function keyboardSupport() {
-    $$('.employee-card').forEach(card => {
-        card.tabIndex = 0;
-        card.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') card.classList.toggle('flip-active');
-        });
-    });
-})();
-// ======= Hamburger Menu Toggle =======
-const hamburger = document.querySelector(".hamburger");
-const navBar = document.querySelector(".nav-bar");
-if (hamburger) {
-    hamburger.addEventListener("click", () => {
-        navBar.classList.toggle("active");
-    });
-}
+/* GET INVOLVED redirect handled by validation attach (use data-redirect attribute) */
 
-// ======= Search Feature (Services, Gallery, Staff) =======
-function searchItems(inputSelector, itemsSelector) {
-    const input = document.querySelector(inputSelector);
-    if (!input) return;
-    input.addEventListener("keyup", () => {
-        const filter = input.value.toLowerCase();
-        document.querySelectorAll(itemsSelector).forEach((item) => {
-            const text = item.textContent.toLowerCase();
-            item.style.display = text.includes(filter) ? "" : "none";
-        });
-    });
-}
-
-searchItems(".search-services input", ".service-card");
-searchItems("#gallerySearch", ".card");
-searchItems("#staffSearch", ".flip-card");
-
-// ======= FAQ Accordion =======
-document.querySelectorAll(".faq-question").forEach((q) => {
-    q.addEventListener("click", () => {
-        const answer = q.nextElementSibling;
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
-    });
+/* Small accessibility improvement: enable closing lightbox with ESC */
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const lb = document.getElementById('lightbox');
+        if (lb && lb.classList.contains('active')) lb.classList.remove('active');
+    }
 });
-
-// ======= Contact & Enquiry Form Validation =======
-function validateForm(formSelector) {
-    const form = document.querySelector(formSelector);
-    if (!form) return;
-
-    form.addEventListener("submit", (e) => {
+// FORM VALIDATION + FEEDBACK
+document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
-        let valid = true;
 
-        form.querySelectorAll("input, textarea").forEach((field) => {
-            if (!field.value.trim()) {
-                field.style.borderColor = "red";
+        let valid = true;
+        let inputs = form.querySelectorAll("input[required], textarea[required]");
+        let messageBox = form.querySelector(".form-message");
+
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
                 valid = false;
+                input.style.border = "2px solid red";
             } else {
-                field.style.borderColor = "#ccc";
+                input.style.border = "2px solid green";
             }
         });
 
-        if (valid) {
-            alert("Thank you! Your message has been received.");
-            form.reset();
-        } else {
-            alert("Please fill out all required fields.");
+        if (!valid) {
+            messageBox.style.display = "block";
+            messageBox.className = "form-message error";
+            messageBox.innerText = "Please fill in all required fields.";
+            return;
         }
-    });
-}
 
-validateForm("#contactForm");
-validateForm("#enquiryForm");
+        messageBox.style.display = "block";
+        messageBox.className = "form-message success";
+        messageBox.innerText = "Thank you! Your form has been submitted successfully.";
 
-// ======= Lightbox for Gallery =======
-const galleryImages = document.querySelectorAll(".card img");
-galleryImages.forEach((img) => {
-    img.addEventListener("click", () => {
-        const lightbox = document.createElement("div");
-        lightbox.classList.add("lightbox");
-        lightbox.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
-        document.body.appendChild(lightbox);
-        lightbox.addEventListener("click", () => lightbox.remove());
+        form.reset();
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.querySelector("#mobileMenu ul");
 
-// ======= Dynamic Time Display (Contact Page) =======
-const timeEl = document.querySelector("#currentTime");
-if (timeEl) {
-    setInterval(() => {
-        const now = new Date();
-        timeEl.textContent = now.toLocaleTimeString();
-    }, 1000);
-}
-// HAMBURGER MENU
-const ham = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-bar ul");
-
-if (hamburger) {
     hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
+        menu.classList.toggle("show");
     });
-}
-
-// REDIRECT on Get Involved form submit
-const involvedForm = document.getElementById("involvedForm");
-if (involvedForm) {
-    involvedForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Thank you for your interest! Redirecting you to our Contact page...");
-        window.location.href = "./Contact us.html";
-    });
-}
-
-
-/* ---------- End of script ---------- */
+});

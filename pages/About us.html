@@ -2,230 +2,220 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>About Us | Faranani Shoe Cleaning</title>
-
-    <!-- SEO -->
     <meta name="description"
-        content="Learn about Faranani Shoe Cleaning — our dedicated team restoring shoes and empowering the community through honest work and quality service." />
-    <meta name="keywords" content="About Faranani, Shoe Cleaning Team, Professional Shoe Care, Community Initiative" />
-    <meta name="author" content="Faranani Shoe Cleaning" />
-
-    <link rel="stylesheet" href="../css/style.css" />
+        content="Learn about Faranani Shoe Cleaning — our mission, team and community initiatives.">
+    <meta name="keywords" content="about, team, community, shoe cleaning">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/a2b5c2b8c3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="../assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
-            <h1>Faranani Shoe Cleaning</h1>
+    <header class="site-header">
+        <div class="header-inner container">
+            <div class="brand"><img src="../assets/Logo.jpg" alt="logo" class="logo-img">
+                <div>
+                    <h1>Faranani Shoe Cleaning</h1>
+                    <p>Our people, our purpose</p>
+                </div>
+            </div>
+            <input id="menu-toggle" type="checkbox"><label for="menu-toggle" class="menu-icon"
+                aria-hidden="true"><span></span><span></span><span></span></label>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./About us.html" class="active">About</a></li>
+                    <li><a href="./Gallery.html">Gallery</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./enquery.html">Enquiry</a></li>
+                    <li><a href="./Contact us.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./About us.html">About Us</a></li>
-                <li><a href="./Gallery.html">Gallery</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./Our work.html">Our Work</a></li>
-                <li><a href="./enquery.html">Enquiry</a></li>
-                <li><a href="./Get involved.html">Get Involved</a></li>
-                <li><a href="./Contact us.html">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger">&#9776;</div>
-        </nav>
     </header>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>About Faranani Shoe Cleaning</h2>
+                <p>Faranani began as a small local service that grew into a community-first business: providing
+                    professional shoe care while training and empowering young people. We blend technical excellence
+                    with social impact.</p>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h2>Who We Are</h2>
-        <p>
-            Faranani Shoe Cleaning is a proudly South African initiative born from passion and purpose.
-            We specialize in professional shoe care services — from deep cleaning to full restoration —
-            and dedicate our craft to serving our community with excellence and empowerment.
-        </p>
-        <p>
-            Our team is built on values of teamwork, innovation, and upliftment. Each member plays a
-            vital role in delivering quality work while creating job opportunities and inspiring youth
-            entrepreneurship in our communities.
-        </p>
-    </section>
+        <section class="section">
+            <div class="container">
+                <h3>Our Mission & Vision</h3>
+                <p style="max-width:900px;margin:0 auto;color:#444;text-align:center">Our mission is to provide
+                    high-quality shoe restoration and maintenance while offering skills training and employment
+                    opportunities to youth in our community. We envision a future where local craft and dignity of work
+                    go hand-in-hand with environmental responsibility.</p>
+            </div>
+        </section>
 
-    <!-- Search bar -->
-    <section class="search-section">
-        <input type="text" id="employeeSearch" placeholder="Search employee name or position..." />
-        <button id="searchBtn">Search</button>
-    </section>
+        <section class="section">
+            <div class="container">
+                <h3>Meet Our Team</h3>
+                <div class="search-row"><input id="employeeSearch" type="search"
+                        placeholder="Search employees (name, role)"></div>
 
-    <!-- Employee Cards -->
-    <section class="employee-section">
-        <h2>Meet Our Team</h2>
-        <div class="card-container">
-
-            <!-- Employee Card Example -->
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/Fari.jpeg" alt="Faranani" />
-                        <h3>Faranani</h3>
-                        <p>Founder & CEO</p>
+                <div class="team-grid">
+                    <!-- 8 Employees as flip cards - images should exist in assets -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/Faranani.jpg" alt="Faranani">
+                                <div class="card-content">
+                                    <h4>Faranani M</h4>
+                                    <p>Founder</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Faranani M</h4>
+                                    <p><strong>Goal:</strong> Expand training & jobs across the region.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-back">
-                        <h3>Faranani</h3>
-                        <p><strong>Position:</strong> Founder & CEO</p>
-                        <p><strong>Goal:</strong> To inspire young entrepreneurs and grow a sustainable community-based
-                            business.</p>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/Ndivhuwo.jpeg" alt="Ndivhuwo M">
+                                <div class="card-content">
+                                    <h4>Ndivhuwo M</h4>
+                                    <p>Operations</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Ndivhuwo M</h4>
+                                    <p><strong>Goal:</strong> Deliver quality service and training.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/mpho.jpg" alt="Sipho B">
+                                <div class="card-content">
+                                    <h4>Sipho B</h4>
+                                    <p>Technician</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Sipho B</h4>
+                                    <p><strong>Goal:</strong> Perfect restoration craft.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/Employee 1.jpg" alt="Amanda N">
+                                <div class="card-content">
+                                    <h4>Amanda N</h4>
+                                    <p>Finance</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Amanda N</h4>
+                                    <p><strong>Goal:</strong> Sustainable growth & transparency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/musidzan.jpg" alt="Nokuthula K">
+                                <div class="card-content">
+                                    <h4>Nokuthula K</h4>
+                                    <p>Quality Control</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Nokuthula K</h4>
+                                    <p><strong>Goal:</strong> Ensure consistent excellence.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/Orland.jpg" alt="Tebogo M">
+                                <div class="card-content">
+                                    <h4>Tebogo M</h4>
+                                    <p>Logistics</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Tebogo M</h4>
+                                    <p><strong>Goal:</strong> Fast, safe deliveries.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/United.jpg" alt="Ayanda Z">
+                                <div class="card-content">
+                                    <h4>Ayanda Z</h4>
+                                    <p>Marketing</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Ayanda Z</h4>
+                                    <p><strong>Goal:</strong> Share our impact stories.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card"><img src="../assets/Real M.jpg" alt="Precious M">
+                                <div class="card-content">
+                                    <h4>Precious M</h4>
+                                    <p>Admin</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Precious M</h4>
+                                    <p><strong>Goal:</strong> Support staff & operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/Ndivhuwo.jpeg" alt="Ndivhuwo" />
-                        <h3>Ndivhuwo</h3>
-                        <p>Operations Manager</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Ndivhuwo</h3>
-                        <p><strong>Position:</strong> Operations Manager</p>
-                        <p><strong>Goal:</strong> To ensure every client receives spotless service and satisfaction.</p>
-                    </div>
-                </div>
-            </div>
+    </main>
 
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/THbo.jpg " alt="Employee Thabo Nkosi" />
-                        <h3>Thabo Nkosi</h3>
-                        <p>Head Technician</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Thabo Nkosi</h3>
-                        <p><strong>Position:</strong> Head Technician</p>
-                        <p><strong>Goal:</strong> To perfect the art of shoe restoration with precision and passion.</p>
-                    </div>
-                </div>
-            </div>
+    <div id="lightbox"></div>
 
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/Employee 1.jpg" alt="Employee Lerato Molefe" />
-                        <h3>Lerato Molefe</h3>
-                        <p>Marketing Lead</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Lerato Molefe</h3>
-                        <p><strong>Position:</strong> Marketing Lead</p>
-                        <p><strong>Goal:</strong> To share our story and connect with the community through every clean
-                            step.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add four more employees -->
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/zimas.jpg" alt="Employee Sipho Dlamini" />
-                        <h3>Sipho Dlamini</h3>
-                        <p>Customer Service</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Sipho Dlamini</h3>
-                        <p><strong>Position:</strong> Customer Service</p>
-                        <p><strong>Goal:</strong> To make sure every client walks away smiling — shoes and heart alike.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/musidzan.jpg" alt="Employee Nomvula Khumalo" />
-                        <h3>Nomvula Khumalo</h3>
-                        <p>Finance Officer</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Nomvula Khumalo</h3>
-                        <p><strong>Position:</strong> Finance Officer</p>
-                        <p><strong>Goal:</strong> To ensure fair pricing and keep our services affordable to all.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/Orland.jpg" alt="Employee Kabelo Maseko" />
-                        <h3>Kabelo Maseko</h3>
-                        <p>Logistics Manager</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Kabelo Maseko</h3>
-                        <p><strong>Position:</strong> Logistics Manager</p>
-                        <p><strong>Goal:</strong> To ensure timely delivery and collection for every customer.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="employee-card" onclick="flipCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/Real M.jpg" alt="Employee Palesa Nkuna" />
-                        <h3>Palesa Nkuna</h3>
-                        <p>Community Liaison</p>
-                    </div>
-                    <div class="card-back">
-                        <h3>Palesa Nkuna</h3>
-                        <p><strong>Position:</strong> Community Liaison</p>
-                        <p><strong>Goal:</strong> To strengthen our community impact through partnerships and outreach.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-footer"><a href="https://facebook.com">Facebook</a> <a
+                    href="https://wa.me/27663792391">WhatsApp</a> <a
+                    href="mailto:info@farananishoecleaning.co.za">Email</a></div>
+            <p>&copy; 2025 Faranani Shoe Cleaning</p>
         </div>
-    </section>
-
-    <footer>
-        <footer class="site-footer">
-            <div class="footer-inner">
-                <div class="social-footer">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
-                    <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
-                    <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
-                </div>
-                <p>&copy; 2025 Faranani Shoe Cleaning | Restoring every step with pride.</p>
-        </footer>
-
-        <script>
-            // Flip card only when clicked
-            function flipCard(card) {
-                card.classList.toggle("flipped");
-            }
-
-            // Employee search
-            document.getElementById("searchBtn").addEventListener("click", function () {
-                const input = document.getElementById("employeeSearch").value.toLowerCase();
-                const cards = document.querySelectorAll(".employee-card");
-
-                cards.forEach(card => {
-                    const name = card.querySelector("h3").innerText.toLowerCase();
-                    const position = card.querySelector("p").innerText.toLowerCase();
-                    card.style.display = (name.includes(input) || position.includes(input)) ? "block" : "none";
-                });
-            });
-        </script>
+    </footer>
 </body>
 
 </html>

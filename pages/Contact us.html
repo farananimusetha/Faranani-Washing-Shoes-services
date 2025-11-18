@@ -2,92 +2,105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contact Us | Faranani Shoe Cleaning</title>
-
-    <!-- SEO -->
-    <meta name="description"
-        content="Get in touch with Faranani Shoe Cleaning for professional shoe care services and community initiatives." />
-    <meta name="keywords" content="Faranani Contact, Shoe Cleaning Support, Shoe Care, Enquiry, Faranani Services" />
-    <meta name="author" content="Faranani Shoe Cleaning" />
-
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="description" content="Contact Faranani Shoe Cleaning — phone, email, maps and contact form.">
+    <meta name="keywords" content="contact, phone, email, map">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/a2b5c2b8c3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="../assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
-            <h1>Faranani Shoe Cleaning</h1>
+    <header class="site-header">
+        <div class="header-inner container">
+            <div class="brand"><img src="../assets/Logo.jpg" alt="logo" class="logo-img">
+                <div>
+                    <h1>Faranani Shoe Cleaning</h1>
+                    <p>Get in touch</p>
+                </div>
+            </div>
+            <input id="menu-toggle" type="checkbox"><label for="menu-toggle" class="menu-icon"
+                aria-hidden="true"><span></span><span></span><span></span></label>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./About us.html">About</a></li>
+                    <li><a href="./Gallery.html">Gallery</a></li>
+                    <li><a href="./services.html">services</a></li>
+                    <li><a href="./Our work.html">Our work</a></li>
+                    <li><a href="./Get involved.html">Get involved</a></li>
+                    <li><a href="./enquery.html">Enquiry</a></li>
+                    <li><a href="./Contact us.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./About us.html">About Us</a></li>
-                <li><a href="./Gallery.html">Gallery</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./Our work.html">Our Work</a></li>
-                <li><a href="./enquery.html">Enquiry</a></li>
-                <li><a href="./Get involved.html">Get Involved</a></li>
-                <li><a href="./Contact us.html">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger">&#9776;</div>
-        </nav>
     </header>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you — call, WhatsApp or use the form below. Our team responds quickly during
+                    business hours.</p>
+            </div>
+        </section>
 
-    <section class="contact-header">
-        <h2>Contact Us</h2>
-        <p>We’d love to hear from you! Get in touch with our team today.</p>
-    </section>
-
-    <!-- Contact Info -->
-    <section style="text-align:center; margin: 2rem;">
-        <p><strong>Address:</strong> 123 Main Street, Johannesburg, South Africa</p>
-        <p><strong>Phone:</strong> +27766369198</p>
-        <p><strong>Email:</strong> info@farananishoecleaning.co.za</p>
-        <p><strong>Current Time:</strong> <span id="currentTime"></span></p>
-    </section>
-
-    <!-- Contact Form -->
-    <section>
-        <form id="contactForm">
-            <h3>Send Us a Message</h3>
-            <input type="text" id="name" name="name" placeholder="Full Name" required />
-            <input type="email" id="email" name="email" placeholder="Email Address" required />
-            <input type="text" id="subject" name="subject" placeholder="Subject" required />
-            <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Google Map -->
-    <section style="margin: 3rem 0; text-align:center;">
-        <h3>Find Us Here</h3>
-        <div style="width: 90%; max-width: 700px; margin: 1rem auto;">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.2543399578927!2d28.047305275283216!3d-26.05454516130216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1b9bb123cf%3A0x7db39d4a929b73b5!2sSandton%20City!5e0!3m2!1sen!2sza!4v1731234567890!5m2!1sen!2sza"
-                width="100%" height="350" style="border:0;" allowfullscreen loading="lazy">
-            </iframe>
-        </div>
-    </section>
-
-    <footer>
-        <footer class="site-footer">
-            <div class="footer-inner">
-                <div class="social-footer">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
-                    <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
-                    <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
+        <section class="section">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:1rem"><strong>Phone:</strong> 076 636 9168 —
+                    <strong>Email:</strong> info@farananishoecleaning.co.za
                 </div>
-                <p>&copy; 2025 Faranani Shoe Cleaning | Restoring every step with pride.</p>
-        </footer>
+
+                <form id="contactForm" class="form-card" novalidate>
+                    <h3>Send Us a Message</h3>
+
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required data-error="Please enter your name">
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required data-error="Please enter a valid email">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        data-error="Please enter a message"></textarea>
+
+                    <label for="type">Message Type</label>
+                    <select id="type" name="type" required data-error="Please select a message type">
+                        <option value="">-- Select --</option>
+                        <option value="general">General enquiry</option>
+                        <option value="booking">Booking / Quote</option>
+                        <option value="support">Support / Feedback</option>
+                    </select>
+
+                    <div style="margin:8px 0"><strong>Local Time:</strong> <span id="currentTime"></span></div>
+                    <p id="formMessage" class="form-message"></p>
+
+
+                    <div class="actions"><button type="submit" class="btn">Send Message</button><a class="btn ghost"
+                            href="../index.html">Back Home</a></div>
+                </form>
+
+                <div style="max-width:900px;margin:2rem auto">
+                    <h3 style="text-align:center">Find Us</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.2543399578927!2d28.047305275283216!3d-26.05454516130216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1b9bb123cf%3A0x7db39d4a929b73b5!2sSandton%20City!5e0!3m2!1sen!2sza!4v1731234567890!5m2!1sen!2sza"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox"></div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-footer"><a href="https://facebook.com">Facebook</a> <a
+                    href="https://wa.me/27663792391">WhatsApp</a></div>
+            <p>&copy; 2025 Faranani Shoe Cleaning</p>
+        </div>
+    </footer>
 </body>
 
 </html>

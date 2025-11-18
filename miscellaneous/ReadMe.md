@@ -52,6 +52,58 @@ File & Folder Structure
     |
     |__ index.html               #Home page (entry point)
 
+   # Faranani Shoe Cleaning — Website
+
+**Faranani Shoe Cleaning** — professional shoe cleaning & community outreach.
+
+## Overview
+This website showcases services, gallery, staff, and contact/enquiry features. It includes:
+- Responsive design
+- Card-based layouts
+- Employee flip cards (click to flip)
+- Gallery lightbox
+- Enquiry price calculator
+- Live form validation
+- Live clock and embedded map
+- SEO meta tags, sitemap / robots (add to repo)
+
+## Files
+- `index.html`
+- `pages/` (About us.html, Gallery.html, services.html, enquery.html, Contact us.html, Get involved.html)
+- `css/style.css`
+- `js/script.js`
+- `assets/` (images)
+
+## Local setup
+1. Clone repo.
+2. Serve via local web server (Live Server in VSCode recommended).
+3. Ensure `css/` and `js/` folders are in same root paths as HTML.
+
+## Changelog (short)
+- `Initial setup` — base structure
+- `Add homepage & nav`
+- `Add header & footer`
+- `Create about page`
+- `Add employee flip cards`
+- `Build services page`
+- `Add gallery with lightbox`
+- `Add enquiry form + calc`
+- `Add contact form + validation`
+- `Add get involved redirect`
+- `Add search features`
+- `Add FAQ & live clock`
+- `Improve SEO`
+- `Add sitemap & robots`
+- `Final testing & deploy`
+
+## Notes
+- Images kept with original filenames; keep `assets/` folder intact.
+- To change accent color update `--accent` in `css/style.css`.
+- Forms validate client-side; server-side processing requires backend integration.
+
+
+
+
 REFERENCES
     W3Schools. (2025, September 12). W3Schools. Retrieved from W3Schools: https://www.w3schools.com/cssref/pr_class_cursor.php
 

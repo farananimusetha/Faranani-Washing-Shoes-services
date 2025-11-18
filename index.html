@@ -2,200 +2,197 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Faranani Shoe Cleaning | Professional Shoe Care</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Faranani Shoe Cleaning — Professional Shoe Care & Community</title>
     <meta name="description"
-        content="Faranani Shoe Cleaning — trusted shoe cleaning, restoration, and repair in Limpopo. Eco-friendly, affordable, pickup & delivery available." />
-    <meta name="keywords" content="shoe cleaning, sneaker cleaning, restoration, sole repair, Faranani, Limpopo" />
-    <meta name="author" content="Faranani Shoe Cleaning" />
-
+        content="Faranani Shoe Cleaning offers professional shoe cleaning, restoration and repair. We also run community outreach and training programs." />
+    <meta name="keywords" content="shoe cleaning, sneaker cleaning, restoration, leather care, Faranani" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="header-inner container">
+            <div class="brand">
+                <img src="./assets/Logo.jpg" alt="Faranani logo" class="logo-img">
+                <div>
+                    <h1>Faranani Shoe Cleaning</h1>
+                    <p>Restore. Protect. Empower.</p>
+                </div>
+            </div>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="./assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
-            <h1>Faranani Shoe Cleaning</h1>
-            <p class="tag">Restore. Protect. Empower.</p>
+            <input id="menu-toggle" type="checkbox">
+            <label for="menu-toggle" class="menu-icon"
+                aria-hidden="true"><span></span><span></span><span></span></label>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="./pages/About us.html">About</a></li>
+                    <li><a href="./pages/services.html">Services</a></li>
+                    <li><a href="./pages/Gallery.html">Gallery</a></li>
+                    <li><a href="./pages/Get involved.html">Get Involved</a></li>
+                    <li><a href="./pages/enquery.html">Enquiry</a></li>
+                    <li><a href="./pages/Contact us.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./pages/About us.html ">About Us</a></li>
-                <li><a href="./pages/Gallery.html">Gallery</a></li>
-                <li><a href="./pages/services.html">Services</a></li>
-                <li><a href="./pages/Our work.html">Our Work</a></li>
-                <li><a href="./pages/enquery.html">Enquiry</a></li>
-                <li><a href="./pages/Get involved.html">Get Involved</a></li>
-                <li><a href="./pages/Contact us.html">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger">&#9776;</div>
-        </nav>
     </header>
 
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <h2>Step Into Clean Confidence</h2>
-            <p>Professional shoe cleaning, restoration and repair — eco-friendly products, expert technicians,
-                convenient pickup & delivery.</p>
-            <div class="hero-cta">
-                <a class="btn" href="./pages/services.html">See Services</a>
-                <a class="btn ghost" href="./pages/enquery.html">Request Quote</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT QUICK -->
-    <section class="intro">
-        <div class="content">
-            <h3>About Faranani washing soe service</h3>
-            <p>Faranani is a community-first shoe care company. We train young people in practical skills while
-                offering
-                high-quality cleaning and restoration for all types of footwear. Sustainability and dignity
-                guide
-                everything we do.</p>
-        </div>
-    </section>
-
-    <!-- SERVICES PREVIEW (cards) -->
-    <section class="section services-section">
-        <div class="section-inner">
-            <h3>Popular Services review</h3>
-
-            <div class="search-row">
-                <input id="serviceSearch" type="search" placeholder="Search services (e.g. Sneaker, Leather, Sole)" />
-            </div>
-
-            <div id="servicesGrid" class="card-grid">
-                <!-- service-card: image, title, short desc, price, book -->
-                <article class="card service-card">
-                    <img src="./assets/Sneaker Whitening.jpeg" alt="Sneaker deep clean">
-                    <div class="card-content">
-                        <h4>Sneaker Deep Clean</h4>
-                        <p>Full deep clean, stain removal, odor neutralize.</p>
-                        <div class="meta">
-                            <span class="price">R120</span>
-                            <a class="btn small" href="./pages/Contact us.html">Book</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card service-card">
-                    <img src="./assets/Leather Conditioning.jpeg" alt="Leather conditioning">
-                    <div class="card-content">
-                        <h4>Leather Conditioning</h4>
-                        <p>Clean, condition and restore leather vibrancy.</p>
-                        <div class="meta">
-                            <span class="price">R150</span>
-                            <a class="btn small" href="./pages/Contact us.html">Book</a>
-                        </div>
-                    </div>
-                </article>
-
-
-
-                <article class="card service-card">
-                    <img src="./assets/Sole Replacement.jpeg" alt="Sole replacement">
-                    <div class="card-content">
-                        <h4>Sole Replacement</h4>
-                        <p>Durable sole repair & replacement service.</p>
-                        <div class="meta">
-                            <span class="price">R200</span>
-                            <a class="btn small" href="./pages/Contact us.html">Book</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div> <!-- .card-grid -->
-        </div>
-    </section>
-
-    <!-- GALLERY PREVIEW -->
-    <section class="section gallery-section">
-        <div class="section-inner">
-            <h3>Gallery review</h3>
-
-            <div class="search-row">
-                <input id="gallerySearch" type="search" placeholder="Search gallery (Sneakers, Boots, Suede)" />
-            </div>
-
-            <div id="galleryGrid" class="card-grid">
-                <figure class="card gallery-card">
-                    <img src="./assets/Community Food Drive.jpg" alt="Giving the Community food">
-                    <figcaption class="card-content">
-                        <h4>Giving the Community food</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="card gallery-card">
-                    <img src="./assets/Health Camp.jpg" alt="Health camp">
-                    <figcaption class="card-content">
-                        <h4>Health camp</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="card gallery-card">
-                    <img src="./assets/Elderly Care.jpg" alt="Elderly care">
-                    <figcaption class="card-content">
-                        <h4>taking care of old people</h4>
-                    </figcaption>
-                </figure>
-
-            </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section testimonials">
-        <div class="section-inner">
-            <h3>Happy Customers</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-content">
-                        <p>"My sneakers look brand new!"</p>
-                        <p class="muted">— Lebo M.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p>"Exceptional service and friendly staff."</p>
-                        <p class="muted">— Thabo N.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p>"Pickup and delivery made everything easy."</p>
-                        <p class="muted">— Naledi R.</p>
-                    </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Step Into Clean Confidence</h2>
+                <p>Faranani is your trusted partner for premium shoe cleaning, repair and restoration — using
+                    eco-friendly products and trained local staff. We also run community programs and training to
+                    empower youth.</p>
+                <div style="margin-top:1rem;">
+                    <a class="btn" href="./pages/services.html">View Services</a>
+                    <a class="btn ghost" href="./pages/enquery.html">Request Quote</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <h3>Popular Services</h3>
+                <div class="search-row">
+                    <input id="serviceSearch" type="search"
+                        placeholder="Search services (e.g. Sneaker, Leather, Suede)">
+                </div>
+                <div class="card-grid">
+                    <article class="card service-card">
+                        <img src="./assets/Sneaker Whitening.jpeg" alt="Sneaker Deep Cleaning">
+                        <div class="card-content">
+                            <div>
+                                <h4>Sneaker Deep Clean</h4>
+                                <p>Deep cleaning, stain removal, odor neutralisation for all sneaker types.</p>
+                            </div>
+                            <div class="meta">
+                                <span class="price">R120</span>
+                                <a class="btn small" href="./pages/Contact us.html">Book</a>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- FOOTER -->
+                    <article class="card service-card">
+                        <img src="./assets/Leather Conditioning.jpeg" alt="Leather Conditioning">
+                        <div class="card-content">
+                            <div>
+                                <h4>Leather Conditioning</h4>
+                                <p>Condition and restore leather to look and feel new again.</p>
+                            </div>
+                            <div class="meta">
+                                <span class="price">R150</span>
+                                <a class="btn small" href="./pages/Contact us.html">Book</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card service-card">
+                        <img src="./assets/Suede Revival.jpeg" alt="Suede Revival">
+                        <div class="card-content">
+                            <div>
+                                <h4>Suede Care</h4>
+                                <p>Gently restore nap and clean suede without damage.</p>
+                            </div>
+                            <div class="meta">
+                                <span class="price">R160</span>
+                                <a class="btn small" href="./pages/Contact us.html">Book</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3>Meet the Team</h3>
+                <div class="search-row">
+                    <input id="employeeSearch" type="search" placeholder="Search staff (name, role)">
+                </div>
+                <div class="team-grid">
+                    <!-- a couple of preview cards -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card">
+                                <img src="./assets/Employee 1.jpg" alt="Thabo - Founder">
+                                <div class="card-content">
+                                    <h4>Thabo M.</h4>
+                                    <p>Founder & CEO</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Thabo M.</h4>
+                                    <p>Goal: Scale training and job opportunities across Limpopo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-inner">
+                            <div class="flip-front card">
+                                <img src="./assets/musidzan.jpg" alt="Lerato - Operations">
+                                <div class="card-content">
+                                    <h4>Lerato M.</h4>
+                                    <p>Operations</p>
+                                </div>
+                            </div>
+                            <div class="flip-back card">
+                                <div class="card-content">
+                                    <h4>Lerato M.</h4>
+                                    <p>Goal: Constant quality & timely service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3>Our Gallery</h3>
+                <div class="search-row">
+                    <input id="gallerySearch" type="search" placeholder="Search gallery (e.g. 'restore','clean')">
+                </div>
+                <div class="card-grid">
+                    <figure class="card gallery-card"><img src="./assets/White.jpg"
+                            alt="Before and after white sneakers">
+                        <figcaption class="card-content">
+                            <h4>White Sneaker Restore</h4>
+                        </figcaption>
+                    </figure>
+                    <figure class="card gallery-card"><img src="./assets/Leather Conditioning.jpeg" alt="Leather shine">
+                        <figcaption class="card-content">
+                            <h4>Leather Shine</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightbox"></div>
+
     <footer class="site-footer">
-        <div class="footer-inner">
+        <div class="container">
             <div class="social-footer">
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
-                <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
-                <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://wa.me/27663792391" target="_blank">WhatsApp</a>
+                <a href="mailto:info@farananishoecleaning.co.za">Email</a>
             </div>
-            <p>&copy; 2025 Faranani Shoe Cleaning — All rights reserved</p>
+            <p>&copy; 2025 Faranani Shoe Cleaning — Restoring every step with pride</p>
         </div>
     </footer>
-
-    <div id="lightbox" class="lightbox" aria-hidden="true"></div>
-
-    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -2,111 +2,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Enquiry | Faranani Shoe Cleaning</title>
-
-    <!-- SEO -->
-    <meta name="description"
-        content="Make an enquiry for our professional shoe cleaning and care services — easy online request and instant total calculation." />
-    <meta name="keywords"
-        content="Faranani Shoe Enquiry, Shoe Cleaning Quote, Service Cost Estimator, Online Booking" />
-    <meta name="author" content="Faranani Shoe Cleaning" />
-
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="description" content="Request a quote instantly using our service calculator." />
+    <meta name="keywords" content="enquiry, price calculator, quote">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/a2b5c2b8c3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="../assets/Logo.jpg" alt="Faranani Logo" class="logo-img" />
-            <h1>Faranani Shoe Cleaning</h1>
+    <header class="site-header">
+        <div class="header-inner container">
+            <div class="brand"><img src="../assets/Logo.jpg" alt="logo" class="logo-img">
+                <div>
+                    <h1>Faranani Shoe Cleaning</h1>
+                    <p>Instant quotes & booking</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./About us.html">About</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./enquery.html" class="active">Enquiry</a></li>
+                    <li><a href="./Contact us.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./About us.html">About Us</a></li>
-                <li><a href="./Gallery.html">Gallery</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./Our work.html">Our Work</a></li>
-                <li><a href="./enquery.html">Enquiry</a></li>
-                <li><a href="./Get involved.html">Get Involved</a></li>
-                <li><a href="./Contact us.html">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger">&#9776;</div>
-        </nav>
     </header>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Enquire & Get an Instant Total</h2>
+                <p>Choose a service and quantity — the live calculator will show totals. Fill in your details to request
+                    booking.</p>
+            </div>
+        </section>
 
-    <section class="enquiry-header">
-        <h2>Service Enquiry</h2>
-        <p>Request your quote and see the total instantly before you book!</p>
-    </section>
+        <section class="section">
+            <div class="container">
+                <form id="enquiryForm" class="form-card" novalidate>
+                    <h3>Service Enquiry</h3>
 
-    <form id="enquiryForm">
-        <h3>Enquiry Form</h3>
+                    <label for="clientName">Full Name</label>
+                    <input type="text" id="clientName" name="clientName" required
+                        data-error="Please enter your full name">
 
-        <input type="text" id="clientName" name="clientName" placeholder="Full Name" required />
-        <input type="email" id="clientEmail" name="clientEmail" placeholder="Email Address" required />
-        <input type="tel" id="clientPhone" name="clientPhone" placeholder="Phone Number" required />
+                    <label for="clientEmail">Email</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required
+                        data-error="Please enter a valid email">
 
-        <label for="serviceType">Select a Service</label>
-        <select id="serviceType" required>
-            <option value="">-- Choose a Service --</option>
-            <option value="120">Sneaker Deep Cleaning – R120</option>
-            <option value="150">Leather Care & Conditioning – R150</option>
-            <option value="160">Suede Shoe Care – R160</option>
-            <option value="200">Sole Replacement – R200</option>
-            <option value="130">Whitening Service – R130</option>
-            <option value="100">Waterproofing Protection – R100</option>
-            <option value="50">Lace Replacement – R50</option>
-            <option value="140">Odor & Bacteria Removal – R140</option>
-            <option value="90">Executive Shoe Shine – R90</option>
-            <option value="80">Kids Shoe Cleaning – R80</option>
-        </select>
+                    <label for="clientPhone">Phone</label>
+                    <input type="tel" id="clientPhone" name="clientPhone" required
+                        data-error="Please enter your phone number">
 
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" min="1" value="1" required />
+                    <label for="serviceType">Select Service</label>
+                    <select id="serviceType" required data-error="Please pick a service">
+                        <option value="">-- Choose a service --</option>
+                        <option value="120">Sneaker Deep Cleaning — R120</option>
+                        <option value="150">Leather Conditioning — R150</option>
+                        <option value="160">Suede Care — R160</option>
+                        <option value="200">Sole Replacement — R200</option>
+                        <option value="130">Whitening Service — R130</option>
+                        <option value="100">Waterproofing — R100</option>
+                        <option value="50">Lace Replacement — R50</option>
+                        <option value="140">Odour Removal — R140</option>
+                        <option value="90">Executive Shoe Shine — R90</option>
+                        <option value="80">Kids Shoe Cleaning — R80</option>
+                    </select>
 
-        <label for="total">Total Cost (R)</label>
-        <input type="text" id="total" readonly />
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required
+                        data-error="Enter quantity (1 or more)">
 
-        <textarea id="notes" rows="4" placeholder="Additional details or requests..."></textarea>
+                    <label for="total">Total (R)</label>
+                    <input type="text" id="total" name="total" readonly>
 
-        <button type="submit">Submit Enquiry</button>
-    </form>
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests..."></textarea>
 
-    <footer>
-        <footer class="site-footer">
-            <div class="footer-inner">
-                <div class="social-footer">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
-                    <a href="https://wa.me/27766369198" target="_blank" aria-label="WhatsApp">WhatsApp</a> |
-                    <a href="mailto:info@farananishoecleaning.co.za" aria-label="Email">Email</a>
-                </div>
-                <p>&copy; 2025 Faranani Shoe Cleaning | Restoring every step with pride.</p>
-        </footer>
+                    <div class="actions">
+                        <button type="submit" class="btn">Submit Enquiry</button>
+                        <p id="formMessage" class="form-message"></p>
 
-        <script>
-            // Auto Total Calculation
-            const serviceType = document.getElementById("serviceType");
-            const quantity = document.getElementById("quantity");
-            const total = document.getElementById("total");
+                        <a class="btn ghost" href="./Contact us.html">Contact Us</a>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-            function calculateTotal() {
-                const price = parseFloat(serviceType.value) || 0;
-                const qty = parseInt(quantity.value) || 0;
-                total.value = (price * qty).toFixed(2);
-            }
+    </main>
 
-            serviceType.addEventListener("change", calculateTotal);
-            quantity.addEventListener("input", calculateTotal);
-        </script>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-footer"><a href="https://facebook.com">Facebook</a> <a
+                    href="https://wa.me/27663792391">WhatsApp</a></div>
+            <p>&copy; 2025 Faranani Shoe Cleaning</p>
+        </div>
+    </footer>
 </body>
 
 </html>
